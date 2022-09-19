@@ -6,12 +6,15 @@ See [Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-i
 
 ## Test
 ```sh
+# Run all tests
 ./mvnw test
+
+# Test specific test suites
+./mvnw test -Dtest=FactorialNumberOfTrailingZerosTest
 ```
 
 ## Check style
 ```sh
-# @TODO include in build cycle
 # Report within shell
 ./mvnw checkstyle:check
 
