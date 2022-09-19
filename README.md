@@ -6,26 +6,31 @@ See [Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-i
 
 ## Test
 ```sh
-mvn test
+./mvnw test
 ```
 
 ## Check style
 ```sh
 # @TODO include in build cycle
 # Report within shell
-mvn checkstyle:check
+./mvnw checkstyle:check
 
 # Generate report in target/site/checkstyle.html
-mvn checkstyle:checkstyle
+./mvnw checkstyle:checkstyle
 ```
 
 ## Validate
 ```sh
-mvn validate
+./mvnw validate
 ```
 
 ## Package and run
 ```sh
-mvn package
+./mvnw package
 java -cp target/java-kata-1.0-SNAPSHOT.jar dev.ianbunag.java_kata.App
+```
+
+## Clean
+```sh
+./mvnw clean
 ```
