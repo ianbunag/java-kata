@@ -4,10 +4,14 @@ package dev.ianbunag.java_kata;
  * Hello world!
  *
  */
-public class App
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public final class App {
+    private App() { }
+
+    /**
+     * Prints hello world.
+     * @param args
+     */
+    public static void main(final String[] args) {
+        System.out.println("Hello World!");
     }
 }
