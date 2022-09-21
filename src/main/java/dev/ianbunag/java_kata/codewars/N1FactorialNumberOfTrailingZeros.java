@@ -1,7 +1,7 @@
 package dev.ianbunag.java_kata.codewars;
 
-public final class FactorialNumberOfTrailingZeros {
-  private FactorialNumberOfTrailingZeros() { }
+public final class N1FactorialNumberOfTrailingZeros {
+  private N1FactorialNumberOfTrailingZeros() { }
 
   /**
    * See explanations below.
@@ -24,8 +24,8 @@ public final class FactorialNumberOfTrailingZeros {
     int numberOfZeros = 0;
     int difference = number;
 
-    while (difference >= FactorialNumberOfTrailingZeros.ZERO_MULTIPLE) {
-      difference /= FactorialNumberOfTrailingZeros.ZERO_MULTIPLE;
+    while (difference >= N1FactorialNumberOfTrailingZeros.ZERO_MULTIPLE) {
+      difference /= N1FactorialNumberOfTrailingZeros.ZERO_MULTIPLE;
       numberOfZeros += difference;
     }
 
