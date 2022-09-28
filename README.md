@@ -62,4 +62,4 @@ java -cp target/java-kata-1.0-SNAPSHOT.jar dev.ianbunag.java_kata.App
   - Output
 
 ### Cheatsheet
-[[Cheatsheet](https://www.bigocheatsheet.com/)](https://www.bigocheatsheet.com/)
+[Cheatsheet](https://www.bigocheatsheet.com/)
