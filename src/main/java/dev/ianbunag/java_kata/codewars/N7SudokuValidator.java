@@ -1,6 +1,9 @@
 package dev.ianbunag.java_kata.codewars;
 
-public final class N7SudokuValidator {
+/**
+ * Challenge solution.
+ */
+public class N7SudokuValidator {
   private N7SudokuValidator() { }
 
   /**
@@ -29,32 +32,29 @@ public final class N7SudokuValidator {
 
   /**
    * Challenge solution.
+   * <ul>
+   *  <li>Average time complexity: O(log n)
+   *  <li>Worst time complexity:   O(n)
+   *  <li>Space complexity:        O(1)
+   * </ul>
    *
-   * Average time complexity: O(log n)
-   * Worst time complexity:   O(n)
-   * Space complexity:        O(1)
-   *
-   * @param sudoku
+   * @param sudoku Sudoku matrix.
    * @return true if sudoku is valid.
    */
-  public static boolean check(final int[][] sudoku) {
+  public static boolean check(int[][] sudoku) {
     for (int row = 0; row < N7SudokuValidator.SUDOKU_DIMENSION; row += 1) {
       if (!N7SudokuValidator.rowIsValid(sudoku, row)) {
         return false;
       }
     }
 
-    for (
-      int column = 0;
-      column < N7SudokuValidator.SUDOKU_DIMENSION;
-      column += 1
-    ) {
+    for (int column = 0; column < N7SudokuValidator.SUDOKU_DIMENSION; column += 1) {
       if (!N7SudokuValidator.columnIsValid(sudoku, column)) {
         return false;
       }
     }
 
-    for (int[] sectionStart: N7SudokuValidator.SECTION_STARTS) {
+    for (int[] sectionStart : N7SudokuValidator.SECTION_STARTS) {
       var row = sectionStart[0];
       var column = sectionStart[1];
 
@@ -66,19 +66,15 @@ public final class N7SudokuValidator {
     return true;
   }
 
-  private static boolean isInvalidValue(final int value) {
+  private static boolean isInvalidValue(int value) {
     return value < 1 || value > N7SudokuValidator.SUDOKU_DIMENSION;
   }
 
-  private static boolean rowIsValid(final int[][] sudoku, final int row) {
+  private static boolean rowIsValid(int[][] sudoku, int row) {
     var tracker = new Tracker(N7SudokuValidator.SUDOKU_DIMENSION);
     var sum = 0;
 
-    for (
-      int column = 0;
-      column < N7SudokuValidator.SUDOKU_DIMENSION;
-      column += 1
-    ) {
+    for (int column = 0; column < N7SudokuValidator.SUDOKU_DIMENSION; column += 1) {
       var value = sudoku[row][column];
 
       if (N7SudokuValidator.isInvalidValue(value)) {
@@ -95,15 +91,11 @@ public final class N7SudokuValidator {
     return sum == N7SudokuValidator.SUDOKU_SUM;
   }
 
-  private static boolean columnIsValid(final int[][] sudoku, final int column) {
+  private static boolean columnIsValid(int[][] sudoku, int column) {
     var tracker = new Tracker(N7SudokuValidator.SUDOKU_DIMENSION);
     var sum = 0;
 
-    for (
-      int row = 0;
-      row < N7SudokuValidator.SUDOKU_DIMENSION;
-      row += 1
-    ) {
+    for (int row = 0; row < N7SudokuValidator.SUDOKU_DIMENSION; row += 1) {
       var value = sudoku[row][column];
 
       if (N7SudokuValidator.isInvalidValue(value)) {
@@ -120,11 +112,7 @@ public final class N7SudokuValidator {
     return sum == N7SudokuValidator.SUDOKU_SUM;
   }
 
-  private static boolean sectionIsValid(
-    final int[][] sudoku,
-    final int row,
-    final int column
-  ) {
+  private static boolean sectionIsValid(int[][] sudoku, int row, int column) {
     var tracker = new Tracker(N7SudokuValidator.SUDOKU_DIMENSION);
     var sum = 0;
     var endRow = row + N7SudokuValidator.SECTION_DIMENSION;
@@ -151,25 +139,25 @@ public final class N7SudokuValidator {
 
     return sum == N7SudokuValidator.SUDOKU_SUM;
   }
-}
 
-final class Tracker {
-  /**
-   * Tracked values.
-   */
-  private Boolean[] memory;
+  private static class Tracker {
+    /**
+     * Tracked values.
+     */
+    private Boolean[] memory;
 
-  Tracker(final int length) {
-    memory = new Boolean[length];
-  }
-
-  public boolean track(final int value) {
-    if (memory[value - 1] == null) {
-      memory[value - 1] = true;
-
-      return false;
+    Tracker(int length) {
+      memory = new Boolean[length];
     }
 
-    return true;
+    public boolean track(int value) {
+      if (memory[value - 1] == null) {
+        memory[value - 1] = true;
+
+        return false;
+      }
+
+      return true;
+    }
   }
 }

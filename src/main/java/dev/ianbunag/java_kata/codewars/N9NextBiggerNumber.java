@@ -2,33 +2,30 @@ package dev.ianbunag.java_kata.codewars;
 
 import java.util.Arrays;
 
-public final class N9NextBiggerNumber {
+/**
+ * Challenge solution.
+ */
+public class N9NextBiggerNumber {
   private N9NextBiggerNumber() { }
 
   /**
    * Forfeited challenge solution.
    * See https://www.codewars.com/kata/reviews/57fa47c9341b671ebc00005d/groups/5965ecf6bf214fec080005b3.
+   * <ul>
+   *  <li>Average time complexity: O(log n)
+   *  <li>Worst time complexity:   O(n log n)
+   *  <li>Space complexity:        O(n)
+   * </ul>
    *
-   * Average time complexity: O(log n)
-   * Worst time complexity:   O(n log n)
-   * Space complexity:        O(n)
-   *
-   * @param number
+   * @param number Starting number
    * @return Next bigger number.
    */
-  public static long nextBiggerNumber(final long number) {
+  public static long nextBiggerNumber(long number) {
     var numbers = Long.toString(number).toCharArray();
 
-    for (
-      var targetIndex = numbers.length - 2;
-      targetIndex >= 0;
-      targetIndex--
-    ) {
-      for (
-        var beforeTargetIndex = numbers.length - 1;
-        beforeTargetIndex > targetIndex;
-        beforeTargetIndex--
-      ) {
+    for (var targetIndex = numbers.length - 2; targetIndex >= 0; targetIndex--) {
+      var beforeTargetIndex = numbers.length - 1;
+      for (; beforeTargetIndex > targetIndex; beforeTargetIndex--) {
         var targetValue = numbers[targetIndex];
         var beforeTargetValue = numbers[beforeTargetIndex];
 

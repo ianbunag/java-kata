@@ -14,6 +14,8 @@ function main() {
   local CHALLENGE_CODE_SRC="$CHALLENGE_DIRECTORY_SRC/$CHALLENGE_NAME_SRC.java"
   local CHALLENGE_CODE_TEST="$CHALLENGE_DIRECTORY_TEST/$CHALLENGE_NAME_TEST.java"
 
+  # @TODO numbering
+
   mkdir -p $CHALLENGE_DIRECTORY_SRC
   mkdir -p $CHALLENGE_DIRECTORY_TEST
 
@@ -23,21 +25,25 @@ function main() {
   cat << EOF >> $CHALLENGE_CODE_SRC
 package dev.ianbunag.java_kata.$NAMESPACE;
 
-public final class $CHALLENGE_NAME_SRC {
-  private $CHALLENGE_NAME_SRC() { }
+/**
+ * Challenge solution.
+ */
+public class $CHALLENGE_NAME_SRC {
+    private $CHALLENGE_NAME_SRC() { }
 
-  /**
-   * Challenge solution.
-   *
-   * Average time complexity: O(1)
-   * Worst time complexity:   O(1)
-   * Space complexity:        O(1)
-   *
-   * @return
-   */
-  public static void challenge() {
+    /**
+     * Challenge solution.
+     * <ul>
+     *  <li>Average time complexity: O(1)
+     *  <li>Worst time complexity:   O(1)
+     *  <li>Space complexity:        O(1)
+     * </ul>
+     *
+     * @return challenge answer.
+     */
+    public static void challenge() {
 
-  }
+    }
 }
 EOF
   cat << EOF >> $CHALLENGE_CODE_TEST
@@ -46,10 +52,10 @@ package dev.ianbunag.java_kata.$NAMESPACE;
 import org.junit.Test;
 
 public class $CHALLENGE_NAME_TEST {
-  @Test
-  public void testChallenge() throws Exception {
+    @Test
+    public void testChallenge() throws Exception {
 
-  }
+    }
 }
 EOF
 

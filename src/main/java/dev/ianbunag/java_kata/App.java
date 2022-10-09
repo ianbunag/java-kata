@@ -1,17 +1,17 @@
 package dev.ianbunag.java_kata;
 
 /**
- * Hello world!
- *
+ * Hello world.
  */
-public final class App {
-    private App() { }
+public class App {
+  private App() { }
 
-    /**
-     * Prints hello world.
-     * @param args
-     */
-    public static void main(final String[] args) {
-        System.out.println("Hello World!");
-    }
+  /**
+   * Prints hello world.
+   *
+   * @param args CLI arguments.
+   */
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
 }

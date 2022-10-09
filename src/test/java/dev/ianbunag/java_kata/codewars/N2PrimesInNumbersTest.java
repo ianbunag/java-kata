@@ -24,7 +24,7 @@ public class N2PrimesInNumbersTest {
 
   @Test
   public void testPrimeIterable() throws Exception {
-    var primeIterable = new PrimeIterable();
+    var primeIterable = new N2PrimesInNumbers.PrimeIterable();
     var values = new ArrayList<Integer>();
     Integer[] expected = {1, 2, 3, 5, 7, 11, 13, 17, 19};
 

@@ -53,7 +53,7 @@ public class N3PickPeaksTest {
   @Test
   public void testChallenge() throws Exception {
     for (int n = 0 ; n < msg.length ; n++) {
-      final int[] p1 = posS[n], p2 = peaksS[n];
+      int[] p1 = posS[n], p2 = peaksS[n];
       Map<String,List<Integer>> expected = new HashMap<String,List<Integer>>() {{
           put("pos",   Arrays.stream(p1).boxed().collect(Collectors.toList()));
           put("peaks", Arrays.stream(p2).boxed().collect(Collectors.toList()));

@@ -1,12 +1,17 @@
 package dev.ianbunag.java_kata.java_tutorial;
 
-public final class MyFirstClass {
+/**
+ * Tutorial first class.
+ */
+public class MyFirstClass {
   private MyFirstClass() { }
+
   /**
    * Prints hello world.
-   * @param args
+   *
+   * @param args CLI arguments.
    */
-  public static void main(final String... args) {
-      System.out.println("Hello, World!");
+  public static void main(String... args) {
+    System.out.println("Hello, World!");
   }
 }

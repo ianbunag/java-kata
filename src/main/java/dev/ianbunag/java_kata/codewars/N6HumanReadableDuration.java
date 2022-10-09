@@ -1,6 +1,9 @@
 package dev.ianbunag.java_kata.codewars;
 
-public final class N6HumanReadableDuration {
+/**
+ * Challenge solution.
+ */
+public class N6HumanReadableDuration {
   private N6HumanReadableDuration() { }
 
   /**
@@ -30,34 +33,32 @@ public final class N6HumanReadableDuration {
   /**
    * Challenge solution. Time complexities are 1 as the Durations list has fixed
    *  length.
+   * <ul>
+   *  <li>Average time complexity: O(1)
+   *  <li>Worst time complexity:   O(1)
+   *  <li>Space complexity:        O(1)
+   * </ul>
    *
-   * Average time complexity: O(1)
-   * Worst time complexity:   O(1)
-   * Space complexity:        O(1)
-   *
-   * @param seconds
-   * @return formatted duration.
+   * @param seconds Duration in seconds.
+   * @return Formatted duration.
    */
-  public static String formatDuration(final int seconds) {
+  public static String formatDuration(int seconds) {
     if (seconds == 0) {
       return N6HumanReadableDuration.NOW;
     }
 
     var readableDuration = "";
     var remainingSeconds = seconds;
+    var numberOfDurations = N6HumanReadableDuration.DURATIONS.length;
 
-    for (
-      var ctr = 0;
-      ctr < N6HumanReadableDuration.DURATIONS.length && remainingSeconds > 0;
-      ctr += 1
-    ) {
+    for (var ctr = 0; ctr < numberOfDurations && remainingSeconds > 0; ctr += 1) {
       var duration = N6HumanReadableDuration.DURATIONS[ctr];
 
       if (duration.getSeconds() > remainingSeconds) {
         continue;
       }
 
-      var quantity = remainingSeconds / duration.getSeconds();
+      final var quantity = remainingSeconds / duration.getSeconds();
       remainingSeconds = remainingSeconds % duration.getSeconds();
 
       if (readableDuration != "" && remainingSeconds > 0) {
@@ -72,43 +73,43 @@ public final class N6HumanReadableDuration {
 
     return readableDuration;
   }
-}
 
-final class Duration {
-  /**
-   * Duration name.
-   */
-  private final String name;
-  /**
-   * Number of seconds in a duration.
-   */
-  private final Integer seconds;
+  private static class Duration {
+    /**
+     * Duration name.
+     */
+    private final String name;
+    /**
+     * Number of seconds in a duration.
+     */
+    private final Integer seconds;
 
-  private Duration(final String name, final Integer seconds) {
-    this.name = name;
-    this.seconds = seconds;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public Integer getSeconds() {
-    return seconds;
-  }
-
-  public String toReadableDuration(final Integer quantity) {
-    var readableDuration = quantity + " " + name;
-
-    if (quantity > 1) {
-      readableDuration += "s";
+    private Duration(String name, Integer seconds) {
+      this.name = name;
+      this.seconds = seconds;
     }
 
-    return readableDuration;
+    public String getName() {
+      return name;
+    }
+
+    public Integer getSeconds() {
+      return seconds;
+    }
+
+    public String toReadableDuration(Integer quantity) {
+      var readableDuration = quantity + " " + name;
+
+      if (quantity > 1) {
+        readableDuration += "s";
+      }
+
+      return readableDuration;
+    }
+
+    public static Duration create(String name, Integer seconds) {
+      return new Duration(name, seconds);
+    }
   }
 
-  public static Duration create(final String name, final Integer seconds) {
-    return new Duration(name, seconds);
-  }
 }
-

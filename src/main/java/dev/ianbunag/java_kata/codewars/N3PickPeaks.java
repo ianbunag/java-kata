@@ -5,7 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class N3PickPeaks {
+/**
+ * Challenge solution.
+ */
+public class N3PickPeaks {
   private N3PickPeaks() { }
 
   /**
@@ -20,15 +23,16 @@ public final class N3PickPeaks {
 
   /**
    * Challenge solution.
+   * <ul>
+   *  <li>Average time complexity: O(n)
+   *  <li>Worst time complexity:   O(n)
+   *  <li>Space complexity:        O(n log n)
+   * </ul>
    *
-   * Average time complexity: O(n)
-   * Worst time complexity:   O(n)
-   * Space complexity:        O(n log n)
-   *
-   * @param arr
+   * @param arr array to determine peaks from.
    * @return map of positions and peaks.
    */
-  public static Map<String, List<Integer>> getPeaks(final int[] arr) {
+  public static Map<String, List<Integer>> getPeaks(int[] arr) {
     var result = new HashMap<String, List<Integer>>();
     var plateauPosition = -1;
 
@@ -44,9 +48,9 @@ public final class N3PickPeaks {
         plateauPosition = position;
       }
       if (
-        plateauPosition == -1
-        || current != arr[plateauPosition]
-        || before > current || current <= after
+          plateauPosition == -1
+          || current != arr[plateauPosition]
+          || before > current || current <= after
       ) {
         continue;
       }

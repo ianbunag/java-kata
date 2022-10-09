@@ -1,6 +1,9 @@
 package dev.ianbunag.java_kata.codewars;
 
-public final class N1FactorialNumberOfTrailingZeros {
+/**
+ * Challenge solution.
+ */
+public class N1FactorialNumberOfTrailingZeros {
   private N1FactorialNumberOfTrailingZeros() { }
 
   /**
@@ -8,19 +11,20 @@ public final class N1FactorialNumberOfTrailingZeros {
    *  - https://www.purplemath.com/modules/factzero.htm
    *  - https://www.handakafunda.com/number-of-trailing-zeros/
    */
-  private static final int ZERO_MULTIPLE = 5;
+  private static int ZERO_MULTIPLE = 5;
 
   /**
    * Challenge solution.
+   * <ul>
+   *  <li>Average time complexity: O(n log n)
+   *  <li>Worst time complexity:   O(n log n)
+   *  <li>Space complexity:        O(1)
+   * </ul>
    *
-   * Average time complexity: O(n log n)
-   * Worst time complexity:   O(n log n)
-   * Space complexity:        O(1)
-   *
-   * @param number
+   * @param number number to assert.
    * @return number of trailing zeros in factorial of number.
    */
-  public static int zeros(final int number) {
+  public static int zeros(int number) {
     int numberOfZeros = 0;
     int difference = number;
 

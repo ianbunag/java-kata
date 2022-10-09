@@ -2,7 +2,10 @@ package dev.ianbunag.java_kata.codewars;
 
 import java.math.BigInteger;
 
-public final class N5LastDigitLargeNumber {
+/**
+ * Challenge solution.
+ */
+public class N5LastDigitLargeNumber {
   private N5LastDigitLargeNumber() { }
 
   /**
@@ -12,18 +15,19 @@ public final class N5LastDigitLargeNumber {
 
   /**
    * Challenge solution.
+   * <ul>
+   *  <li>Average time complexity: O(1)
+   *  <li>Worst time complexity:   O(1)
+   *  <li>Space complexity:        O(1)
+   * </ul>
    *
-   * Average time complexity: O(1)
-   * Worst time complexity:   O(1)
-   * Space complexity:        O(1)
-   *
-   * @param value
-   * @param exponent
-   * @return last digit.
+   * @param value Value.
+   * @param exponent Exponent.
+   * @return Last digit.
    */
   public static int lastDigit(
-    final BigInteger value,
-    final BigInteger exponent
+      BigInteger value,
+      BigInteger exponent
   ) {
     if (exponent.toString() == "0") {
       return 1;
@@ -36,13 +40,13 @@ public final class N5LastDigitLargeNumber {
     return N5LastDigitLargeNumber.getLastDigit(lastDigitPower).intValue();
   }
 
-  private static BigInteger getLastDigit(final BigInteger value) {
+  private static BigInteger getLastDigit(BigInteger value) {
     var stringValue = value.toString();
 
     return new BigInteger(stringValue.substring(stringValue.length() - 1));
   }
 
-  private static BigInteger getCommonExponent(final BigInteger value) {
+  private static BigInteger getCommonExponent(BigInteger value) {
     var commonExponent = value.mod(N5LastDigitLargeNumber.EXPONENT_DIFFERENCE);
 
     if (commonExponent.intValue() == 0) {
