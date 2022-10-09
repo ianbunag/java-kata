@@ -5,7 +5,7 @@ function main() {
   local NAMESPACE=$(echo $1 | sed 's:/*$::')
   local CHALLENGE=$2
   local LAST_FILE=$(ls $DIRECTORY_SRC/$NAMESPACE | grep "^N\d.*\.java" | sort -V | tail -n 1)
-  local LAST_COUNT=$(echo $LAST_FILE | grep -o "^N\d" | grep -o "\d")
+  local LAST_COUNT=$(echo $LAST_FILE | grep -o "^N\d*" | grep -o "\d*")
   local NEXT_COUNT=$(($LAST_COUNT+1))
   local CHALLENGE_DIRECTORY_SRC="$DIRECTORY_SRC/$NAMESPACE"
   local CHALLENGE_DIRECTORY_TEST="$DIRECTORY_TEST/$NAMESPACE"
