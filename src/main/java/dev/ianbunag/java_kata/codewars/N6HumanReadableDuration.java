@@ -89,10 +89,6 @@ public class N6HumanReadableDuration {
       this.seconds = seconds;
     }
 
-    public String getName() {
-      return name;
-    }
-
     public Integer getSeconds() {
       return seconds;
     }

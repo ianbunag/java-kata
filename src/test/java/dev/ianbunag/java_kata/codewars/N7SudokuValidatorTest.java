@@ -3,8 +3,6 @@ package dev.ianbunag.java_kata.codewars;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class N7SudokuValidatorTest {

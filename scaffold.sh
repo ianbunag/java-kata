@@ -51,6 +51,9 @@ package dev.ianbunag.java_kata.$NAMESPACE;
 
 import org.junit.Test;
 
+/**
+ * Challenge tests.
+ */
 public class $CHALLENGE_NAME_TEST {
   @Test
   public void testChallenge() throws Exception {

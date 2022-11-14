@@ -1,7 +1,8 @@
 package dev.ianbunag.java_kata.codewars;
 
-import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.Test;
 
 public class N16StringIncrementerTest {
   private static void doTest(String str, String expected) {
