@@ -63,3 +63,9 @@ java -cp target/java-kata-1.0-SNAPSHOT.jar dev.ianbunag.java_kata.App
 
 ### Cheatsheet
 [Cheatsheet](https://www.bigocheatsheet.com/)
+
+
+## Kata websites
+- https://www.codewars.com/
+- https://neetcode.io/
+- https://leetcode.com/

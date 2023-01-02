@@ -29,8 +29,6 @@ package dev.ianbunag.java_kata.$NAMESPACE;
  * Challenge solution.
  */
 public class $CHALLENGE_NAME_SRC {
-  private $CHALLENGE_NAME_SRC() { }
-
   /**
     * Challenge solution.
     * <ul>
