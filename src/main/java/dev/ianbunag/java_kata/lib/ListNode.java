@@ -1,5 +1,8 @@
 package dev.ianbunag.java_kata.lib;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 /**
  * ListNode.
  */
@@ -16,6 +19,19 @@ public class ListNode {
   public ListNode(int val, ListNode next) {
     this.val = val;
     this.next = next;
+  }
+
+  /**
+   * toList.
+   */
+  public int[] toList()  {
+    var current = new int[]{this.val};
+
+    if (this.next == null) {
+      return current;
+    }
+
+    return IntStream.concat(Arrays.stream(current), Arrays.stream(this.next.toList())).toArray();
   }
 
   /**
