@@ -4,7 +4,7 @@ package dev.ianbunag.java_kata.lib;
  * TreeNode.
  */
 public class TreeNode {
-  int val;
+  public int val;
   public TreeNode left;
   public TreeNode right;
 
