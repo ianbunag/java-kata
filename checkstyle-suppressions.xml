@@ -9,4 +9,5 @@
   <suppress checks="PackageName" files=".java"/>
   <suppress checks="AbbreviationAsWordInName" files=".java"/>
   <suppress checks="OneTopLevelClassCheck" files=".java"/>
+  <suppress checks="VariableDeclarationUsageDistanceCheck" files=".java"/>
 </suppressions>
