@@ -22,7 +22,7 @@ public class N19WordSearch2 {
     */
   public List<String> findWords(char[][] board, String[] words) {
     var wordsFound = new HashSet<String>();
-    var wordsTrie = Trie.from(words);
+    var wordsTrie = N19Trie.from(words);
 
     for (var row = 0; row < board.length; row += 1) {
       for (var column = 0; column < board[row].length; column += 1) {
@@ -45,7 +45,7 @@ public class N19WordSearch2 {
       char[][] board,
       Integer row,
       Integer column,
-      Trie wordsTrie,
+      N19Trie wordsTrie,
       HashSet<String> wordsFound,
       String previousWord
   ) {
@@ -90,10 +90,10 @@ public class N19WordSearch2 {
   }
 }
 
-class Trie {
+class N19Trie {
   private static char CHARACTER_OFFSET = 'a';
 
-  private Trie[] children = new Trie[26];
+  private N19Trie[] children = new N19Trie[26];
   private Boolean isWord = false;
 
   public void add(String word) {
@@ -111,23 +111,23 @@ class Trie {
   }
 
   public boolean has(char character) {
-    return this.children[character - Trie.CHARACTER_OFFSET] != null;
+    return this.children[character - N19Trie.CHARACTER_OFFSET] != null;
   }
 
-  public Trie get(char character) {
-    return this.children[character - Trie.CHARACTER_OFFSET];
+  public N19Trie get(char character) {
+    return this.children[character - N19Trie.CHARACTER_OFFSET];
   }
 
   public void set(char character) {
-    this.children[character - Trie.CHARACTER_OFFSET] = new Trie();
+    this.children[character - N19Trie.CHARACTER_OFFSET] = new N19Trie();
   }
 
   public Boolean isWord() {
     return this.isWord;
   }
 
-  public static Trie from(String... words) {
-    var trie = new Trie();
+  public static N19Trie from(String... words) {
+    var trie = new N19Trie();
 
     for (var word : words) {
       trie.add(word);
