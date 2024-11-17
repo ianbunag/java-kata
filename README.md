@@ -4,6 +4,12 @@ Collection of Java kata challenges
 ## Maven
 See [Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 
+## Use [sdkman](https://sdkman.io) to install and switch to project Java version
+```sh
+sdk env install
+sdk env
+```
+
 ## Test
 ```sh
 # Run all tests
