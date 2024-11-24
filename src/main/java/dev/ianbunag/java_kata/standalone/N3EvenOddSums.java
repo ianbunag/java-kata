@@ -7,8 +7,8 @@ public class N3EvenOddSums {
     /**
      * Challenge solution.
      * <ul>
-     *  <li>Average time complexity: O(1)
-     *  <li>Worst time complexity:   O(1)
+     *  <li>Average time complexity: O(n)
+     *  <li>Worst time complexity:   O(n)
      *  <li>Space complexity:        O(1)
      * </ul>
      *
