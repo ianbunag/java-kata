@@ -1,9 +1,9 @@
-package dev.ianbunag.java_kata.leetcode;
+package dev.ianbunag.java_kata.standalone;
 
 /**
  * Challenge solution.
  */
-public class N43ReverseInteger {
+public class N6ReverseInteger {
     /**
      * Challenge solution.
      * <ul>
